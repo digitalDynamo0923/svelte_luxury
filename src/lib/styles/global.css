@@ -1,0 +1,128 @@
+/* Font declarations */
+@font-face {
+  font-family: 'brandon-grotesque';
+  src: url('$lib/fonts/Brandon-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'brandon-grotesque';
+  src: url('$lib/fonts/Brandon-Thin-Italic.otf') format('opentype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'brandon-grotesque';
+  src: url('$lib/fonts/Brandon-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'brandon-grotesque';
+  src: url('$lib/fonts/Brandon-Light-Italic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'brandon-grotesque';
+  src: url('$lib/fonts/Brandon-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'brandon-grotesque';
+  src: url('$lib/fonts/Brandon-Regular-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'brandon-grotesque';
+  src: url('$lib/fonts/Brandon-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'brandon-grotesque';
+  src: url('$lib/fonts/Brandon-Medium-Italic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'brandon-grotesque';
+  src: url('$lib/fonts/Brandon-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'brandon-grotesque';
+  src: url('$lib/fonts/Brandon-Bold-Italic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'brandon-grotesque';
+  src: url('$lib/fonts/Brandon-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'brandon-grotesque';
+  src: url('$lib/fonts/Brandon-Black-Italic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Global styles */
+:root {
+  --primary-color: #00227d;
+  --accent-color: #DC2C00;
+  --button-gradient-start: #80ba08;
+  --button-gradient-end: #1d973d;
+  --button-border: #15963d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'brandon-grotesque', sans-serif;
+  color: var(--primary-color);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  color: var(--primary-color);
+}
+
+button {
+  font-family: 'brandon-grotesque', sans-serif;
+} 

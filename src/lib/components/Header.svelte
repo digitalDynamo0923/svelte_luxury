@@ -1,9 +1,7 @@
-<script>
-  // Component props or state can be added here
-</script>
-
 <header class="header">
-  <div class="logo">MAN<sup>VS</sup></div>
+  <div class="logo">
+    <img src="/images/logo.webp" alt="logo" />
+  </div>
 </header>
 
 <style>
@@ -19,17 +17,13 @@
   }
 
   .logo {
-    font-weight: bold;
-    color: #00207d; /* Dark blue color from the logo */
-    font-size: 26px;
-    line-height: 1;
-    text-align: center;
+    width: 114px;
+    height: 26px;
   }
 
-  .logo sup {
-    margin-left: 5px;
-    font-size: 10px;
-    font-weight: 900;
-    border-bottom: 2px solid #00207d;
+  .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 </style>

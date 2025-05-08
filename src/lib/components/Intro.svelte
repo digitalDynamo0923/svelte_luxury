@@ -1,8 +1,5 @@
 <section class="intro">
-  <h1>
-    <span>6 Reasons Tariff-Free Sheets Are the Answer to Your</span>
-    <span>Night Sweats</span>
-  </h1>
+  <h1>6 Reasons Tariff-Free Sheets Are the Answer to Your Night Sweats</h1>
   <p>
     NASA-inspired cooling, silver-infused freshness—without the luxury price
     hike.
@@ -14,30 +11,27 @@
 
 <style>
   .intro {
-    background-color: #00227d;
-    color: white;
+    background-color: var(--primary-color);
     padding: 40px 20px;
     text-align: center;
     position: relative;
   }
 
   h1 {
-    font-family: "Brandon Grotesque", sans-serif;
     font-size: 38px;
     font-weight: 450;
     line-height: 46px;
+    max-width: 770px;
+    margin: 0 auto;
+    color: white;
     letter-spacing: -0.54px;
     text-align: center;
   }
 
-  h1 span {
-    display: block;
-  }
-
   p {
-    font-family: "Brandon Grotesque", sans-serif;
     font-size: 25px;
     font-weight: 390;
+    color: white;
     line-height: 22px;
     letter-spacing: 0px;
     text-align: center;
@@ -66,7 +60,13 @@
   /* Responsive Styles */
   @media (max-width: 768px) {
     h1 {
-      font-size: 1.5rem;
+      font-size: 28px;
+      line-height: 36px;
+      letter-spacing: -0.4px;
+    }
+
+    p {
+      font-size: 18px;
     }
   }
 </style>

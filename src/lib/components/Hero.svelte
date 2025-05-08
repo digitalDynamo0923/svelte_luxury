@@ -20,4 +20,15 @@
     background-size: cover;
     background-position: center;
   }
+
+  @media (max-width: 768px) {
+    .hero {
+      height: 220px;
+    }
+
+    .hero-content {
+      background-size: cover;
+      background-position: left;
+    }
+  }
 </style>

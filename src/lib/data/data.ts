@@ -6,6 +6,7 @@ interface ReasonData {
   isReversed: boolean;
 }
 
+
 export const reasonsData: ReasonData[] = [
   {
     number: 1,
@@ -46,7 +47,7 @@ export const reasonsData: ReasonData[] = [
     number: 6,
     title: "Try Them. Love Them. Or Get Your Money Back.",
     description: "No fine print. No hassle. No tariffs. If you don’t love our premium fabric sheets after 30 nights of better sleep, we’ll refund every cent. We’re confident you'll never look at regular sheets the same way again.",
-    imageUrl: "/images/money_back.webp",
+    imageUrl: ["/images/money_back_1.webp", "/images/money_back_mobile.webp"],
     isReversed: true
   }
 ]; 
