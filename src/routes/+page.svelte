@@ -7,7 +7,7 @@
   import { reasonsData } from "$lib/data/data";
 </script>
 
-<main>
+<main id="main-content">
   <!-- Hero Section -->
   <Hero />
 
@@ -15,18 +15,27 @@
   <Intro />
 
   <!-- Reason Sections -->
-  {#each reasonsData as reason}
-    <Reason
-      number={reason.number}
-      title={reason.title}
-      description={reason.description}
-      imageUrl={reason.imageUrl}
-      isReversed={reason.isReversed}
-    />
-  {/each}
+  <section class="reasons-container" aria-label="Product Benefits">
+    {#each reasonsData as reason}
+      <Reason
+        number={reason.number}
+        title={reason.title}
+        description={reason.description}
+        imageUrl={reason.imageUrl}
+        isReversed={reason.isReversed}
+      />
+    {/each}
+  </section>
 
   <!-- CTA Section -->
   <CTA />
 
   <Footer />
 </main>
+
+<style>
+  .reasons-container {
+    display: flex;
+    flex-direction: column;
+  }
+</style>
