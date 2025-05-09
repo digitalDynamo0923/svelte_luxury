@@ -88,13 +88,6 @@
     height: 26px;
   }
 
-  .footer-logo sup {
-    margin-left: 5px;
-    font-size: 10px;
-    font-weight: 900;
-    border-bottom: 2px solid #00207d;
-  }
-
   .contact-container {
     display: flex;
     flex-direction: row;
