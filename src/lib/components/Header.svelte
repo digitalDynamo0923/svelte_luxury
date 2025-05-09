@@ -1,6 +1,10 @@
+<script>
+  import logo from "$lib/assets/images/logo.webp?enhanced";
+</script>
+
 <header class="header">
   <div class="logo">
-    <img src="/images/logo.webp" alt="logo" />
+    <enhanced:img src={logo} alt="Logo image" fetchpriority="high" />
   </div>
 </header>
 
@@ -19,11 +23,5 @@
   .logo {
     width: 114px;
     height: 26px;
-  }
-
-  .logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
   }
 </style>

@@ -45,7 +45,7 @@
     margin: 0 auto;
     width: 18px;
     height: 30px;
-    background-image: url("/icons/arrow_down.svg");
+    background-image: url("$lib/assets/icons/arrow_down.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -59,6 +59,14 @@
 
   /* Responsive Styles */
   @media (max-width: 768px) {
+    .intro {
+      height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+    }
+
     h1 {
       font-size: 28px;
       line-height: 36px;
@@ -67,6 +75,11 @@
 
     p {
       font-size: 18px;
+      margin: 15px 0;
+    }
+
+    .scroll-indicator {
+      margin-top: 15px;
     }
   }
 </style>

@@ -1,7 +1,7 @@
 /* Font declarations */
 @font-face {
   font-family: 'brandon-grotesque';
-  src: url('$lib/fonts/Brandon-Thin.otf') format('opentype');
+  src: url('/fonts/Brandon-Thin.otf') format('opentype');
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: 'brandon-grotesque';
-  src: url('$lib/fonts/Brandon-Thin-Italic.otf') format('opentype');
+  src: url('/fonts/Brandon-Thin-Italic.otf') format('opentype');
   font-weight: 100;
   font-style: italic;
   font-display: swap;
@@ -17,7 +17,7 @@
 
 @font-face {
   font-family: 'brandon-grotesque';
-  src: url('$lib/fonts/Brandon-Light.otf') format('opentype');
+  src: url('/fonts/Brandon-Light.otf') format('opentype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: 'brandon-grotesque';
-  src: url('$lib/fonts/Brandon-Light-Italic.otf') format('opentype');
+  src: url('/fonts/Brandon-Light-Italic.otf') format('opentype');
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: 'brandon-grotesque';
-  src: url('$lib/fonts/Brandon-Regular.otf') format('opentype');
+  src: url('/fonts/Brandon-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: 'brandon-grotesque';
-  src: url('$lib/fonts/Brandon-Regular-Italic.otf') format('opentype');
+  src: url('/fonts/Brandon-Regular-Italic.otf') format('opentype');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -49,7 +49,7 @@
 
 @font-face {
   font-family: 'brandon-grotesque';
-  src: url('$lib/fonts/Brandon-Medium.otf') format('opentype');
+  src: url('/fonts/Brandon-Medium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -57,7 +57,7 @@
 
 @font-face {
   font-family: 'brandon-grotesque';
-  src: url('$lib/fonts/Brandon-Medium-Italic.otf') format('opentype');
+  src: url('/fonts/Brandon-Medium-Italic.otf') format('opentype');
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -65,7 +65,7 @@
 
 @font-face {
   font-family: 'brandon-grotesque';
-  src: url('$lib/fonts/Brandon-Bold.otf') format('opentype');
+  src: url('/fonts/Brandon-Bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -73,7 +73,7 @@
 
 @font-face {
   font-family: 'brandon-grotesque';
-  src: url('$lib/fonts/Brandon-Bold-Italic.otf') format('opentype');
+  src: url('/fonts/Brandon-Bold-Italic.otf') format('opentype');
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -81,7 +81,7 @@
 
 @font-face {
   font-family: 'brandon-grotesque';
-  src: url('$lib/fonts/Brandon-Black.otf') format('opentype');
+  src: url('/fonts/Brandon-Black.otf') format('opentype');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -89,7 +89,7 @@
 
 @font-face {
   font-family: 'brandon-grotesque';
-  src: url('$lib/fonts/Brandon-Black-Italic.otf') format('opentype');
+  src: url('/fonts/Brandon-Black-Italic.otf') format('opentype');
   font-weight: 900;
   font-style: italic;
   font-display: swap;
@@ -126,3 +126,23 @@ h1, h2, h3, h4, h5, h6, p {
 button {
   font-family: 'brandon-grotesque', sans-serif;
 } 
+
+/* Enhanced image global styles */
+enhanced\:img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+picture {
+  width: 100%;
+  height: 100%;
+}
+
+picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}

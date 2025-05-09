@@ -1,131 +1,153 @@
 <script lang="ts">
-  // Props
-  export let number = 1;
-  export let title = "";
-  export let description = "";
-  export let imageUrl: string | string[] = "";
-  export let isReversed = false;
+  // Import all enhanced images
+  import spaceAge1 from "$lib/assets/images/space_age_1.webp?enhanced";
+  import softSkin1 from "$lib/assets/images/softskin_1.webp?enhanced";
+  import tariff from "$lib/assets/images/tariff.webp?enhanced";
+  import laundry from "$lib/assets/images/laundry.webp?enhanced";
+  import pay2_3x from "$lib/assets/images/pay2_3x.webp?enhanced";
+  import moneyBack from "$lib/assets/images/money_back.webp?enhanced";
+  import moneyBackMobile from "$lib/assets/images/money_back_mobile.webp?enhanced";
 
-  import { onMount } from "svelte";
-
-  $: images = typeof imageUrl === "string" ? [imageUrl] : imageUrl;
-  $: hasMultipleImages = images.length > 1;
-  $: isEven = number % 2 === 0;
-  $: isSection6 = number === 6;
-
-  let currentIndex = 0;
-
-  // Change image every 2 seconds if there are multiple images on Figma (except section 6)
-  onMount(() => {
-    let interval: ReturnType<typeof setInterval> | undefined;
-
-    if (hasMultipleImages && !isSection6) {
-      interval = setInterval(() => {
-        currentIndex = (currentIndex + 1) % images.length;
-      }, 2000);
-    }
-
-    return () => {
-      if (interval) clearInterval(interval);
-    };
-  });
+  // Section content
+  const sections = [
+    {
+      number: 1,
+      title: "Luxury Sheets Are Being Hit With Tariffs. Ours Aren't.",
+      description:
+        "Many premium bedding brands source their materials from overseas—then pass import tariffs directly onto you. Our premium Sheets are designed to deliver luxury, cooling, and cleanliness without the markup. You get the same high-end quality (or better), without the government taking a cut.",
+      images: [tariff],
+      isReversed: false,
+    },
+    {
+      number: 2,
+      title: "Space-Age Innovation Without Space-Age Prices",
+      description:
+        "Our temperature-regulating sheets were inspired by the same materials NASA uses to keep astronauts cool. And thanks to our unique approach to sourcing and manufacturing, you won't see those savings eaten up by hidden costs or extra duties. Just smarter comfort, built for Earth.",
+      images: [spaceAge1],
+      isReversed: true,
+    },
+    {
+      number: 3,
+      title: "Fewer Washes = Lower Water Bills = Big Wins",
+      description:
+        "Our silver-infused fibers fight bacteria and odors naturally. That means you can wash less, save more, and feel fresher every night. Traditional sheets just can't compete—and every unnecessary wash is money down the drain.",
+      images: [laundry],
+      isReversed: false,
+    },
+    {
+      number: 4,
+      title: "Why Pay 2–3x More For Sheets That Do Less?",
+      description:
+        "Most \"luxury\" brands aren't antibacterial. They don't regulate temperature. And they certainly don't offer real savings. Our premium Sheets deliver softness, cleanliness, and cooling in one high-tech package—without tariff bloat.",
+      images: [pay2_3x],
+      isReversed: true,
+    },
+    {
+      number: 5,
+      title: "The Hidden Cost of Dirty Sheets? Your Skin.",
+      description:
+        "Regular sheets trap bacteria that irritate skin and clog pores. Our silver-infused our premium Sheets help reduce up to 99.7% of bacteria growth, making them a game-changer for anyone who wants clearer skin and fewer breakouts.",
+      images: [softSkin1],
+      isReversed: false,
+    },
+    {
+      number: 6,
+      title: "Try Them. Love Them. Or Get Your Money Back.",
+      description:
+        "No fine print. No hassle. No tariffs. If you don't love our premium fabric sheets after 30 nights of better sleep, we'll refund every cent. We're confident you'll never look at regular sheets the same way again.",
+      images: [moneyBack],
+      mobileImage: moneyBackMobile,
+      isReversed: true,
+    },
+  ];
 </script>
 
-<section class="reason" class:primary-bg={isEven}>
-  <div class="mobile-container">
-    {#if isReversed}
-      <div class="reason-image desktop-only">
-        {#if isSection6}
-          <img src="/images/money_back.webp" alt={title} />
-        {:else if hasMultipleImages}
-          <div class="image-container">
-            {#each images as img, i}
-              <img
-                src={img}
-                alt={title}
-                class={i === currentIndex ? "visible" : "hidden"}
-              />
-            {/each}
-          </div>
-        {:else}
-          <img src={images[0]} alt={title} />
-        {/if}
+<!-- Desktop View -->
+<div class="desktop-only">
+  {#each sections as section}
+    <section class="reason" class:primary-bg={section.number % 2 === 0}>
+      <div class="container" class:reversed={section.isReversed}>
+        <!-- Content Section -->
+        <div class="reason-content">
+          <h2><span>{section.number}.</span> {section.title}</h2>
+          <p>{section.description}</p>
+        </div>
+
+        <!-- Image Section -->
+        <div class="reason-image">
+          {#if section.number === 1}
+            <enhanced:img
+              src={section.images[0]}
+              alt={section.title}
+              loading="eager"
+              fetchpriority="high"
+            />
+          {:else}
+            <enhanced:img
+              src={section.images[0]}
+              alt={section.title}
+              loading="lazy"
+            />
+          {/if}
+        </div>
       </div>
-      <div class="reason-content">
-        <h2><span>{number}.</span> {title}</h2>
-        <p>{description}</p>
+    </section>
+  {/each}
+</div>
+
+<!-- Mobile View -->
+<div class="mobile-only">
+  {#each sections as section}
+    <section class="reason" class:primary-bg={section.number % 2 === 0}>
+      <div class="container">
+        <!-- Image First on Mobile -->
+        <div class="reason-image">
+          {#if section.number === 1}
+            <enhanced:img
+              src={section.images[0]}
+              alt={section.title}
+              loading="eager"
+              fetchpriority="high"
+            />
+          {:else if section.number === 6 && section.mobileImage}
+            <enhanced:img
+              src={section.mobileImage}
+              alt={section.title}
+              loading="lazy"
+            />
+          {:else}
+            <enhanced:img
+              src={section.images[0]}
+              alt={section.title}
+              loading="lazy"
+            />
+          {/if}
+        </div>
+
+        <!-- Content Second on Mobile -->
+        <div class="reason-content">
+          <h2><span>{section.number}.</span> {section.title}</h2>
+          <p>{section.description}</p>
+        </div>
       </div>
-      <div class="reason-image mobile-only">
-        {#if isSection6}
-          <img src="/images/money_back_mobile.webp" alt={title} />
-        {:else if hasMultipleImages}
-          <div class="image-container">
-            {#each images as img, i}
-              <img
-                src={img}
-                alt={title}
-                class={i === currentIndex ? "visible" : "hidden"}
-              />
-            {/each}
-          </div>
-        {:else}
-          <img src={images[0]} alt={title} />
-        {/if}
-      </div>
-    {:else}
-      <div class="reason-content">
-        <h2><span>{number}.</span> {title}</h2>
-        <p>{description}</p>
-      </div>
-      <div class="reason-image desktop-only">
-        {#if isSection6}
-          <img src="/images/money_back_1.webp" alt={title} />
-        {:else if hasMultipleImages}
-          <div class="image-container">
-            {#each images as img, i}
-              <img
-                src={img}
-                alt={title}
-                class={i === currentIndex ? "visible" : "hidden"}
-              />
-            {/each}
-          </div>
-        {:else}
-          <img src={images[0]} alt={title} />
-        {/if}
-      </div>
-      <div class="reason-image mobile-only">
-        {#if isSection6}
-          <img src="/images/money_back_mobile.webp" alt={title} />
-        {:else if hasMultipleImages}
-          <div class="image-container">
-            {#each images as img, i}
-              <img
-                src={img}
-                alt={title}
-                class={i === currentIndex ? "visible" : "hidden"}
-              />
-            {/each}
-          </div>
-        {:else}
-          <img src={images[0]} alt={title} />
-        {/if}
-      </div>
-    {/if}
-  </div>
-</section>
+    </section>
+  {/each}
+</div>
 
 <style>
-  /* Reason Sections */
   .reason {
     background-color: #e4f2fb;
     height: 610px;
   }
 
-  .mobile-container {
+  .container {
     display: flex;
     height: 100%;
     width: 100%;
+  }
+
+  .container.reversed {
+    flex-direction: row-reverse;
   }
 
   .primary-bg {
@@ -177,35 +199,8 @@
 
   .reason-image {
     background-color: #f0f0f0;
-  }
-
-  .reason-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .image-container {
     position: relative;
-    width: 100%;
-    height: 100%;
-  }
-
-  .image-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-  }
-
-  .image-container img.visible {
-    opacity: 1;
-  }
-
-  .image-container img.hidden {
-    opacity: 0;
+    overflow: hidden;
   }
 
   .mobile-only {
@@ -218,7 +213,15 @@
       height: auto;
     }
 
-    .mobile-container {
+    .desktop-only {
+      display: none;
+    }
+
+    .mobile-only {
+      display: block;
+    }
+
+    .container {
       flex-direction: column;
     }
 
@@ -228,7 +231,8 @@
     }
 
     .reason-content {
-      height: 300px;
+      height: 295px;
+      min-height: 295px;
       padding: 30px 20px;
     }
 
@@ -243,15 +247,7 @@
     }
 
     .reason-image {
-      height: 400px;
-    }
-
-    .desktop-only {
-      display: none;
-    }
-
-    .mobile-only {
-      display: block;
+      height: 350px;
     }
   }
 </style>

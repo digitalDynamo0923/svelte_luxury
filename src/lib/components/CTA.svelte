@@ -1,4 +1,12 @@
 <script>
+  import beddingImage from "$lib/assets/images/bedding.webp?enhanced";
+  import beddingBottom from "$lib/assets/images/bedding_bottom.webp?enhanced";
+  import beddingSection from "$lib/assets/images/bedding_section.webp?enhanced";
+  import bonusImage from "$lib/assets/images/bonus.webp?enhanced";
+  import arrowDown from "$lib/assets/icons/arrow_down.svg";
+  import riskIcon from "$lib/assets/icons/risk.svg";
+  import shippingIcon from "$lib/assets/icons/shipping.svg";
+
   let timeLeft = "14:00";
 
   function startCountdown() {
@@ -27,12 +35,35 @@
     <!-- Desktop layout -->
     <div class="desktop-layout">
       <div class="cta-box-image">
-        <div class="banner"></div>
+        <div class="banner">
+          <enhanced:img src={beddingBottom} alt="Bedding" loading="lazy" />
+        </div>
         <div class="bedding">
-          <div class="bedding-section-1"></div>
-          <div class="bedding-section-2"></div>
-          <div class="bedding-section-3"></div>
-          <div class="bonus"></div>
+          <enhanced:img src={beddingImage} alt="Luxury sheets" loading="lazy" />
+          <div class="bedding-section bedding-section-1">
+            <enhanced:img
+              src={beddingSection}
+              alt="Sheets section"
+              loading="lazy"
+            />
+          </div>
+          <div class="bedding-section bedding-section-2">
+            <enhanced:img
+              src={beddingSection}
+              alt="Sheets section"
+              loading="lazy"
+            />
+          </div>
+          <div class="bedding-section bedding-section-3">
+            <enhanced:img
+              src={beddingSection}
+              alt="Sheets section"
+              loading="lazy"
+            />
+          </div>
+          <div class="bonus">
+            <enhanced:img src={bonusImage} alt="Bonus" loading="lazy" />
+          </div>
         </div>
       </div>
       <div class="cta-box-content">
@@ -48,7 +79,9 @@
         </div>
         <div class="cta-button-container">
           <button class="cta-button" on:click={startCountdown}>
-            <span class="arrow-down"> </span>GET YOUR MIRACLE NOW!
+            <span class="arrow-down">
+              <img src={arrowDown} alt="Arrow down" />
+            </span>GET YOUR MIRACLE NOW!
           </button>
 
           <div class="countdown">
@@ -56,13 +89,17 @@
             <span class="time">{timeLeft}</span>
             <div class="countdown-indicators">
               <div class="indicator">
-                <span class="risk"></span>
+                <span class="risk">
+                  <img src={riskIcon} alt="Risk" />
+                </span>
                 Sell-Out Risk:
-                <span style="color: #DC2C00">High</span>
+                <span style="color: #DD0000">High</span>
               </div>
               <span class="divider">|</span>
               <div class="indicator">
-                <span class="shipping"></span>
+                <span class="shipping">
+                  <img src={shippingIcon} alt="Shipping" />
+                </span>
                 <span style="font-weight: 700">FREE</span>&nbsp;shipping
               </div>
             </div>
@@ -84,18 +121,43 @@
       </div>
 
       <div class="cta-box-image">
-        <div class="banner"></div>
+        <div class="banner">
+          <enhanced:img src={beddingBottom} alt="Bedding" loading="lazy" />
+        </div>
         <div class="bedding">
-          <div class="bedding-section-1"></div>
-          <div class="bedding-section-2"></div>
-          <div class="bedding-section-3"></div>
-          <div class="bonus"></div>
+          <enhanced:img src={beddingImage} alt="Luxury sheets" loading="lazy" />
+          <div class="bedding-section bedding-section-1">
+            <enhanced:img
+              src={beddingSection}
+              alt="Sheets section"
+              loading="lazy"
+            />
+          </div>
+          <div class="bedding-section bedding-section-2">
+            <enhanced:img
+              src={beddingSection}
+              alt="Sheets section"
+              loading="lazy"
+            />
+          </div>
+          <div class="bedding-section bedding-section-3">
+            <enhanced:img
+              src={beddingSection}
+              alt="Sheets section"
+              loading="lazy"
+            />
+          </div>
+          <div class="bonus">
+            <enhanced:img src={bonusImage} alt="Bonus" loading="lazy" />
+          </div>
         </div>
       </div>
 
       <div class="mobile-cta">
         <button class="cta-button" on:click={startCountdown}>
-          <span class="arrow-down"> </span>GET YOUR MIRACLE NOW!
+          <span class="arrow-down">
+            <img src={arrowDown} alt="Arrow down" />
+          </span>GET YOUR MIRACLE NOW!
         </button>
 
         <div class="countdown">
@@ -103,13 +165,17 @@
           <span class="time">{timeLeft}</span>
           <div class="countdown-indicators">
             <div class="indicator">
-              <span class="risk"></span>
+              <span class="risk">
+                <img src={riskIcon} alt="Risk" />
+              </span>
               Sell-Out Risk:
-              <span style="color: #DC2C00">High</span>
+              <span style="color: #DD0000">High</span>
             </div>
             <span class="divider">|</span>
             <div class="indicator">
-              <span class="shipping"></span>
+              <span class="shipping">
+                <img src={shippingIcon} alt="Shipping" />
+              </span>
               <span style="font-weight: 700">FREE</span>&nbsp;shipping
             </div>
           </div>
@@ -175,13 +241,15 @@
     left: 50%;
     width: 262px;
     height: 255px;
-    transform: translate(-40%, -50%);
-    background-image: url("/images/bedding_bottom.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    transform: translate(-45%, -50%);
     opacity: 0.1;
     z-index: 1;
+  }
+
+  .banner enhanced\:img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .cta-box-image .bedding {
@@ -190,52 +258,49 @@
     height: 188px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -60%);
+    transform: translate(-55%, -60%);
     z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url("/images/bedding.webp");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+  }
+
+  .bedding enhanced\:img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .cta-box-image .bedding-section {
+    position: absolute;
+  }
+
+  .bedding-section enhanced\:img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .cta-box-image .bedding-section-3 {
-    position: absolute;
     width: 158px;
     height: 33px;
     bottom: 0;
-    transform: translate(50%, 50%);
-    background-image: url("/images/bedding_section.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    transform: translate(45%, 50%);
   }
 
   .cta-box-image .bedding-section-2 {
-    position: absolute;
     width: 127px;
     height: 27px;
     bottom: 15%;
-    transform: translate(62%, 50%);
-    background-image: url("/images/bedding_section.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    transform: translate(57%, 50%);
   }
 
   .cta-box-image .bedding-section-1 {
-    position: absolute;
     width: 100px;
     height: 21px;
     bottom: 25%;
-    transform: translate(77%, 40%);
-    background-image: url("/images/bedding_section.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    transform: translate(72%, 40%);
   }
 
   .cta-box-image .bonus {
@@ -244,11 +309,13 @@
     height: 76px;
     bottom: 25%;
     right: -10%;
-    transform: translate(17%, 40%);
-    background-image: url("/images/bonus.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    transform: translate(12%, 40%);
+  }
+
+  .bonus enhanced\:img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .cta-box-content {
@@ -257,7 +324,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 40px 40px 20px 10px;
+    padding: 40px 0 20px 0;
     box-sizing: border-box;
   }
 
@@ -287,7 +354,9 @@
 
   .cta-button-container {
     display: flex;
+    margin: 0 auto;
     margin-top: 20px;
+    width: 90%;
     flex-direction: column;
     align-items: center;
     gap: 12px;
@@ -308,6 +377,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    line-height: 1;
   }
 
   .cta-button:hover {
@@ -317,12 +387,18 @@
   .cta-button .arrow-down {
     width: 19px;
     height: 13px;
-    background-image: url("/icons/arrow_down.svg");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-right: 8px;
+    position: relative;
+    top: -1px; /* Slight adjustment to vertically align with text */
+  }
+
+  .arrow-down img {
+    width: 100%;
+    height: 100%;
+    display: block;
   }
 
   .countdown {
@@ -379,37 +455,30 @@
     font-size: 10px;
   }
 
-  .indicator .risk {
-    background-image: url("/icons/risk.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+  .indicator .risk,
+  .indicator .shipping {
     width: 16px;
     height: 14px;
     display: inline-block;
     margin-right: 5px;
   }
 
-  .indicator .shipping {
-    background-image: url("/icons/shipping.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 16px;
-    height: 14px;
-    display: inline-block;
-    margin-right: 5px;
+  .risk img,
+  .shipping img {
+    width: 100%;
+    height: 100%;
   }
 
   /* Mobile styles */
   @media (max-width: 768px) {
     .cta {
       height: auto;
-      padding: 20px 0;
+      padding: 48px 32px;
     }
 
     .cta-box {
       height: auto;
+      width: 100%;
       padding: 48px 32px;
       flex-direction: column;
     }
@@ -427,8 +496,8 @@
     }
 
     .mobile-layout .cta-box-image {
-      width: 300px;
-      height: 250px;
+      width: 280px;
+      height: 240px;
       padding: 0;
       margin: 0 auto;
       position: relative;
@@ -447,26 +516,59 @@
       transform: translate(-50%, -60%);
     }
 
-    .mobile-layout .cta-box-image .bedding-section-1,
-    .mobile-layout .cta-box-image .bedding-section-2,
-    .mobile-layout .cta-box-image .bedding-section-3 {
-      /* Keep the relative positions of these elements but ensure they're positioned relative to the centered bedding */
-      left: auto;
-      right: auto;
-    }
-
-    .mobile-heading,
-    .mobile-cta {
-      width: 300px;
+    .mobile-heading {
+      width: 280px;
       margin: 0 auto;
     }
 
+    .mobile-heading h3 {
+      font-size: 22px;
+      line-height: 30px;
+    }
+
+    .mobile-heading p {
+      font-size: 14px;
+      line-height: 18px;
+    }
+
     .mobile-cta {
-      width: 300px;
+      width: 280px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
       gap: 12px;
+    }
+
+    .mobile-cta .cta-button {
+      padding: 12px 15px;
+      font-size: 0.85rem;
+      width: 100%;
+    }
+
+    .mobile-cta .countdown-indicators {
+      padding: 0 5px;
+      gap: 10px;
+      height: 34px;
+    }
+
+    .mobile-cta .indicator {
+      font-size: 8px;
+      line-height: 10px;
+    }
+
+    .mobile-cta .indicator .risk,
+    .mobile-cta .indicator .shipping {
+      width: 14px;
+      height: 12px;
+      margin-right: 3px;
+    }
+
+    .mobile-cta .countdown-indicators .divider {
+      font-size: 8px;
+    }
+
+    .mobile-cta .countdown .time {
+      font-size: 30px;
     }
   }
 </style>

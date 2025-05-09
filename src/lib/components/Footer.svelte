@@ -1,14 +1,16 @@
 <script>
-  // Component props or state can be added here
+  // Import enhanced images
+  import logo from "$lib/assets/images/logo.webp?enhanced";
+  import mailIcon from "$lib/assets/icons/mail.svg";
 </script>
 
 <footer class="footer">
   <div class="footer-logo">
-    <img src="/images/logo.webp" alt="logo" />
+    <enhanced:img src={logo} alt="logo" loading="lazy" />
   </div>
   <div class="contact-container">
     <div class="position-container">
-      <h5>NOVUS STUDIO LLC</h5>
+      <h4>NOVUS STUDIO LLC</h4>
       <div class="address-container">
         <p>
           111 Town Square Place<br />
@@ -24,7 +26,7 @@
     </div>
 
     <div class="information-container">
-      <h5>INFO</h5>
+      <h4>INFO</h4>
       <div class="info-container">
         <p>
           <span>Shipping Information </span><br />
@@ -36,9 +38,9 @@
     </div>
 
     <div class="support-container">
-      <h5>CUSTOMER SUPPORT</h5>
+      <h4>CUSTOMER SUPPORT</h4>
       <div class="mail">
-        <img src="/icons/mail.svg" alt="mail" />
+        <img src={mailIcon} alt="mail" />
         <p>hello@novus.studio</p>
       </div>
     </div>
@@ -106,7 +108,7 @@
     font-weight: 900;
   }
 
-  h5 {
+  h4 {
     margin-bottom: 15px;
   }
 
