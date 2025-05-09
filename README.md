@@ -2,6 +2,15 @@
 
 Thank you for your attention to my test project.
 
+
+# First commit
+
+Using general static image for the page
+
+# Second commit
+
+Using Enhanced image module for performance upgrading
+
 # sv
 
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
