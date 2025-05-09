@@ -15,7 +15,7 @@
 
   let currentIndex = 0;
 
-  // Change image every 2 seconds if there are multiple images (except section 6)
+  // Change image every 2 seconds if there are multiple images on Figma (except section 6)
   onMount(() => {
     let interval: ReturnType<typeof setInterval> | undefined;
 

@@ -15,7 +15,7 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yourdomain.com/" />
+  <meta property="og:url" content="https://luxurysheets.com/" />
   <meta property="og:title" content="LuxurySheets" />
   <meta
     property="og:description"
@@ -25,7 +25,7 @@
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://yourdomain.com/" />
+  <meta property="twitter:url" content="https://luxurysheets.com/" />
   <meta property="twitter:title" content="LuxurySheets" />
   <meta
     property="twitter:description"
@@ -34,7 +34,7 @@
   <meta property="twitter:image" content="/images/og-image.jpg" />
 
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://yourdomain.com/" />
+  <link rel="canonical" href="https://luxurysheets.com/" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/favicon.png" />
@@ -45,7 +45,7 @@
       "@context": "https://schema.org/",
       "@type": "Product",
       "name": "Premium LuxurySheets Bedding Set",
-      "image": ["https://yourdomain.com/images/bedding.webp"],
+      "image": ["https://luxurysheets.com/images/bedding.webp"],
       "description": "NASA-inspired cooling sheets with silver-infused freshness technology. Temperature-regulating, antibacterial, and tariff-free premium bedding.",
       "brand": {
         "@type": "Brand",
